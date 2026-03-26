@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Loader from './Loader';
 import { useNavigate } from 'react-router-dom';
-import Mycarousel from './Mycarousel';
+
 
 
 const Getproducts = () => {
@@ -56,7 +56,18 @@ const Getproducts = () => {
 
   return (
     <div className='row'>
-      <Mycarousel/>
+
+          <section className='row'>
+            <div >
+             <img src="images/outdoor.jpg" alt="img" height="400px" width="100%"/>
+            </div>
+            <div className='text'>The most reliable way to rent, lease or hire a car in Kenya!
+
+            </div>
+
+          </section>
+      
+      
 
           
           <section className='row'>
