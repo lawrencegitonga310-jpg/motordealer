@@ -2,7 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Loader from './Loader';
 import { useNavigate } from 'react-router-dom';
-import Mycarousel from './components/Mycarousel';
+import Mycarousel from './Mycarousel';
+
 
 const Getproducts = () => {
 
@@ -55,35 +56,36 @@ const Getproducts = () => {
 
   return (
     <div className='row'>
-      <Mycarousel>
+      <Mycarousel/>
+
           <h3 className='text-primary'>Available Cars</h3>
-     {loading && <Loader/> }
-     <h4 className='text-danger'> {error} </h4>
+         {loading && <Loader/> }
+          <h4 className='text-danger'> {error} </h4>
       
-      {/*map the product fetched from the API to the user interface */}
+         {/*map the product fetched from the API to the user interface */}
 
-      {products.map((product) =>(
-        <div className="col-md-3 justify-content-center mb-3" >
-      <div className="card shadow">
-        <img 
-        src={img_url + product.product_photo}
-         alt="product name"
-         className='product_img mt-3' />
+          {products.map((product) =>(
+          <div className="col-md-3 justify-content-center mb-3" >
+          <div className="card shadow">
+          <img 
+          src={img_url + product.product_photo}
+          alt="product name"
+          className='product_img mt-3' />
 
-        <div className="card body">
+          <div className="card body">
           <h5 className='text-primary'> {product.product_name} </h5>
 
           <p className='text-dark'> {product.product_description?.slice(0,70) }... </p>
 
           <h4 className='text-danger'>Kes {product.product_cost}</h4>
           <button className='btn btn-outline-info' onClick={() => navigate("/makepayment", {state : {product}})}>purchase Now </button>
-        </div>
-      </div>
+          </div>
+          </div>
 
-     </div>
-      )  )}
+          </div>
+         )  )}
 
-      </Mycarousel>
+      
 
     
 
