@@ -58,7 +58,64 @@ const Getproducts = () => {
     <div className='row'>
       <Mycarousel/>
 
-          <h3 className='text-primary'>Available Cars</h3>
+          
+          <section className='row'>
+            <div className='col-md-6'>
+             <h4><b>SIMPLY A BETTER EXPERIENCE</b></h4>
+             <h3>Ease & peace of mind from start to finish</h3>
+             <ul>
+              <li>Full refund when you cancel 24hrs before start time.</li>
+              <li>Meet & greet at the airport, your hotel, the office, etc.</li>
+              <li>Take a self-drive vehicle, or add a driver for peace of mind</li>
+             </ul>
+             <h3><b>How it works</b></h3>
+             <section className='row'>
+              <div className='card col-md-6 shadow'>
+                 <p> 1. <b>Select Car:</b>
+                  Browse from hundreds of cars and select the type of car you want for your trip!
+                </p>
+                  
+              </div><br />
+              <div className='card col-md-6 shadow'>
+                 <p>2. <b>Verify Identity:</b>
+                 To keep Otto safe & reliable, we ask all users to quickly verify their identity
+                  </p>
+              </div><br />
+            
+             </section><br />
+
+             <section className='row'>
+                <div className='card col-md-6 shadow'>
+                <p>
+                 3. <b>Payment:</b>
+                 We allow you to pay with MPESA.
+                </p>
+              </div><br />
+              <div className='card col-md-6 shadow'>
+                <p>
+                  4. <b>Confirmation:</b>
+                  Once rental is confirmed, sign contract & pickup vehicle, or a driver will meet & greet you.
+                </p>
+
+              </div>
+
+             </section>
+
+               <h2><b><i>NOTE:</i></b></h2>
+              <h3><i><b>The cost is based on 24 hours</b></i></h3>
+
+
+            </div><br />
+
+            <div className='col-md-6'>
+               <img src="images/banner3.webp" alt="" height="500px" width="500px" />
+
+            </div>
+
+          </section>
+        <h2><b><i>Available Cars</i></b></h2>
+
+
          {loading && <Loader/> }
           <h4 className='text-danger'> {error} </h4>
       
@@ -78,7 +135,7 @@ const Getproducts = () => {
           <p className='text-dark'> {product.product_description?.slice(0,70) }... </p>
 
           <h4 className='text-danger'>Kes {product.product_cost}</h4>
-          <button className='btn btn-outline-info' onClick={() => navigate("/makepayment", {state : {product}})}>purchase Now </button>
+          <button className='btn btn-outline-info' onClick={() => navigate("/makepayment", {state : {product}})}>Hire Now </button>
           </div>
           </div>
 

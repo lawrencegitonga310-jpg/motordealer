@@ -21,10 +21,10 @@ const Mycarousel = () => {
 
           <div className="carousel-item active">
             <img
-              src="images/gg"
+              src="images/download.jpg"
               className="d-block w-100"
               alt="First slide"
-              height="450px"
+              height="500px " width="100px"
             />
             <div className="carousel-caption d-none d-md-block bg-dark opacity-50">
               <h5>First Slide</h5>
@@ -34,10 +34,10 @@ const Mycarousel = () => {
 
           <div className="carousel-item">
             <img
-              src="images/kk"
+              src="images/download (1).jpg"
               className="d-block w-100"
               alt="Second slide"
-              height="450px"
+              height="500px" width="100px"
             />
             <div className="carousel-caption d-none d-md-block bg-dark opacity-50">
               <h5>Second Slide</h5>
@@ -47,10 +47,10 @@ const Mycarousel = () => {
 
           <div className="carousel-item">
             <img
-              src="images/aa"
+              src="images/images.jpg"
               className="d-block w-100"
               alt="Third slide"
-              height="450px"
+              height="500px" width="100px"
             />
             <div className="carousel-caption d-none d-md-block bg-dark opacity-50">
               <h5>Third Slide</h5>
