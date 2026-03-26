@@ -100,3 +100,22 @@
     transform: scaleY(2);
   }
 }
+.navbar {
+  background-color: blue;
+  padding: 10px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;          /* Makes items horizontal */
+  justify-content: center; /* Center items */
+  gap: 20px;              /* Space between items */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}

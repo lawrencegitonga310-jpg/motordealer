@@ -15,11 +15,11 @@ function App() {
 
    <Router>
 
-    <nav className='row text-center bg-yellow'>
- <Link to="/" className='btn btn-primary btn-sm m-1'>Home</Link>
- <Link to="/signin" className='btn btn-danger btn-sm m-1'>Signin</Link>
- <Link to="/signup" className='btn btn-info btn-sm m-1'>Signup</Link>
- <Link to="/addproducts" className='btn btn-warning btn-sm m-1'>Add products</Link>
+    <nav className='text-center bg-dark'>
+ <Link to="/" className='btn btn-sm m-3 bg-white'>Home</Link>
+ <Link to="/signin" className='btn btn-sm m-3 bg-white'>Signin</Link>
+ <Link to="/signup" className='btn btn-sm m-3 bg-white'>Signup</Link>
+ <Link to="/addproducts" className='btn btn-sm m-3 bg-white'>Add products</Link>
  
 </nav>
     <div className="App">

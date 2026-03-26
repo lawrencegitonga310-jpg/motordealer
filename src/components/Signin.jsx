@@ -9,7 +9,7 @@ const [password, setPassword] = useState("");
 
 //Define the three states an application will move to during the signup process
 const [loading, setLoading] = useState("");
-const [success, setSuccess] = useState("");
+const [success] = useState("");
 const [error, setError] = useState("");
 
 //below we have the useNavigate hook to rediirect us to another page on success login/signin

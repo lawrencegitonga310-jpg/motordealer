@@ -62,9 +62,9 @@ const Footer = () => {
           {/* Social Media */}
           <div className="col-md-4">
             <h5 style={styles.heading}>Follow Us</h5>
-            <a href="#" style={styles.link}>Facebook</a>
-            <a href="#" style={styles.link}>Twitter</a>
-            <a href="#" style={styles.link}>Instagram</a>
+            <a href="https://www.facebook.com" style={styles.link}>Facebook</a>
+            <a href="hhtps://www.twiter.com" style={styles.link}>Twitter</a>
+            <a href="https://www.instagram.com" style={styles.link}>Instagram</a>
           </div>
 
         </div>
