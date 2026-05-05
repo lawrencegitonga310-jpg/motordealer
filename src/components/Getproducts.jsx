@@ -61,9 +61,9 @@ const Getproducts = () => {
             <div >
              <img src="images/outdoor.jpg" alt="img" height="400px" width="100%"/>
             </div>
-            <div className='text'>The most reliable way to rent, lease or hire a car in Kenya!
+           
 
-            </div>
+            
 
           </section>
       
