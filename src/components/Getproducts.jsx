@@ -59,7 +59,7 @@ const Getproducts = () => {
 
           <section className='row'>
             <div >
-             <img src="images/outdoor.jpg" alt="img" height="400px" width="100%"/>
+            <img src="images/num.jpg" alt="" height="500px" width="100%" />
             </div>
            
 
@@ -71,16 +71,19 @@ const Getproducts = () => {
 
           
           <section className='row'>
-            <div className='col-md-6'>
-             <h4><b>SIMPLY A BETTER EXPERIENCE</b></h4>
-             <h3>Ease & peace of mind from start to finish</h3>
+            <div className='col-md-6 bg-light shadow p-4'>
+             <h4><b><u>Why Choose Us</u></b></h4>
+             <h3><b>Benefits of renting with us</b></h3>
              <ul>
-              <li>Full refund when you cancel 24hrs before start time.</li>
-              <li>Meet & greet at the airport, your hotel, the office, etc.</li>
-              <li>Take a self-drive vehicle, or add a driver for peace of mind</li>
+              <li><b>Convenience:</b> Meet & greet at the airport, your hotel, the office, etc
+              .</li>
+              <li><b>Flexibility:</b> Cancel or modify your booking up to 24 hours before the start time.</li>
+              <li><b>Peace of Mind:</b> Take a self-drive vehicle, or add a driver for peace of mind</li>
+              <li><b>Competitive Pricing:</b> Get the best deals on car rentals without compromising on quality</li>
+              <li><b>24/7 Customer Support:</b> Our team is always ready to assist you with any questions or concerns.</li>
              </ul>
              <h3><b>How it works</b></h3>
-             <section className='row'>
+             <section className='row bg-blue shadow p-4'>
               <div className='card col-md-6 shadow'>
                  <p> 1. <b>Select Car:</b>
                   Browse from hundreds of cars and select the type of car you want for your trip!
@@ -89,7 +92,7 @@ const Getproducts = () => {
               </div><br />
               <div className='card col-md-6 shadow'>
                  <p>2. <b>Verify Identity:</b>
-                 To keep Otto safe & reliable, we ask all users to quickly verify their identity
+                  To ensure a smooth rental process, we require all customers to verify their identity. 
                   </p>
               </div><br />
             
@@ -99,32 +102,34 @@ const Getproducts = () => {
                 <div className='card col-md-6 shadow'>
                 <p>
                  3. <b>Payment:</b>
-                 We allow you to pay with MPESA.
+                  Pay securely online with a credit card, or mobile money. We also have an option for cash payment.
                 </p>
               </div><br />
               <div className='card col-md-6 shadow'>
                 <p>
                   4. <b>Confirmation:</b>
-                  Once rental is confirmed, sign contract & pickup vehicle, or a driver will meet & greet you.
+                  Once your booking is confirmed, you will receive a confirmation email with all the details of your rental.
                 </p>
 
               </div>
 
              </section>
 
-               <h2><b><i>NOTE:</i></b></h2>
-              <h3><i><b>The cost is based on 24 hours</b></i></h3>
+               
+              <h3><i><b>Ready to hit the road?</b></i></h3>
 
 
             </div><br />
 
             <div className='col-md-6'>
-               <img src="images/banner3.webp" alt="" height="500px" width="500px" />
+               <img src="images/num.jpg" alt="" height="650px" width="500px" />
 
             </div>
 
-          </section>
-        <h2><b><i>Available Cars</i></b></h2>
+          </section> <br /><br />
+        <div className='col-md-12 text-center text-primary font-weight-bold mb-4 p-3'>
+          <h2><b><i>Available Cars</i></b></h2>
+        </div>
 
 
          {loading && <Loader/> }
@@ -137,10 +142,12 @@ const Getproducts = () => {
           <div className="card shadow">
           <img 
           src={img_url + product.product_photo}
-          alt="product name"
+          alt="product name" 
+          height="100%" 
+          width="100%"
           className='product_img mt-3' />
 
-          <div className="card body">
+          <div className="card body bg-yellow p-3">
           <h5 className='text-primary'> {product.product_name} </h5>
 
           <p className='text-dark'> {product.product_description?.slice(0,70) }... </p>

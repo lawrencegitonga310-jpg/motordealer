@@ -119,3 +119,14 @@
   text-decoration: none;
   font-weight: bold;
 }
+.nav-list li a:hover {
+  text-decoration: underline;
+}
+.Signin {
+  background-color: #030911;
+  padding: 30px;
+  border-radius: 12px;
+  width: 300px;
+  color: black;
+}
+
