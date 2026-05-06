@@ -55,15 +55,15 @@ const [error, setError] = useState("");
 
 
   return (
-    <div className='row justify-content-center mt-4 bg-grey p-4'>
-        <div className="card col-md-6 shadow p-4">
-            <h1 className='text-primary'>Sign Up</h1>
+    <div className='row justify-content-center mt-4 bg-black p-4'>
+        <div className="card col-md-6 shadow p-4 bg-grey">
+            <h1 className='text-black'><b>Create an account</b></h1>
             <h5 className="text-warning">{loading}</h5>
             <h3 className="text-success">{success}</h3>
             <h4 className="text-danger">{error}</h4>
             <form onSubmit={handleSubmit}>
                 <input type="text" 
-                placeholder='Enter the Username'
+                placeholder='Username'
                 className='form-control'    
                 value={username} 
                 onChange={(e) => setUsername(e.target.value)}
@@ -72,7 +72,7 @@ const [error, setError] = useState("");
                 {/*Username */}
 
                 <input type="email" 
-                placeholder='Enter the email Address'
+                placeholder='Email Address'
                 className='form-control' 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -81,7 +81,7 @@ const [error, setError] = useState("");
 
 
                 <input type="password" 
-                placeholder='Enter the password'
+                placeholder='password'
                 className='form-control' 
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -89,12 +89,19 @@ const [error, setError] = useState("");
                     {/*Password */}
 
                 <input type="tel" 
-                placeholder='Enter the Mobile Phone number'
+                placeholder='Phone Number'
                 className='form-control' 
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 required /> <br />
                     {/*Mobile Phone number */}
+
+                           <div className="login-options">
+            <label>
+              <input type="checkbox" /> Remember for 30 days
+            </label> <br /><br />
+            <a href="#">Forgot password?</a>
+          </div> <br /><br />
 
                 <input type="submit"  value="Signup" className='btn btn-primary'/>
                 <br /><br />

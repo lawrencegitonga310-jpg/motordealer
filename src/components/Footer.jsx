@@ -32,8 +32,7 @@ const Footer = () => {
           <div className="col-md-4">
             <h5 style={styles.heading}>About Us</h5>
             <p>
-              We are a passionate team dedicated to building modern web applications.
-              Our goal is to create seamless user experiences and scalable solutions.
+              Mlenga Carhire is your trusted partner for quality car rentals. We offer a wide range of vehicles to suit your needs, whether you're looking for a compact car for city driving or a spacious SUV for a family trip. Our commitment to excellent customer service and competitive pricing makes us the go-to choice for all your car rental needs.
             </p>
           </div>
 
@@ -63,7 +62,7 @@ const Footer = () => {
           <div className="col-md-4">
             <h5 style={styles.heading}>Follow Us</h5>
             <a href="https://www.facebook.com" style={styles.link}>Facebook</a>
-            <a href="hhtps://www.twiter.com" style={styles.link}>Twitter</a>
+            <a href="https://www.twitter.com" style={styles.link}>Twitter</a>
             <a href="https://www.instagram.com" style={styles.link}>Instagram</a>
           </div>
 
@@ -72,7 +71,7 @@ const Footer = () => {
         <hr style={{ borderColor: '#444' }} />
 
         <p className="text-center mb-0">
-          © {new Date().getFullYear()} Your Company. All rights reserved.
+          © {new Date().getFullYear()} Mlenga Carhire. All rights reserved.
         </p>
       </div>
     </footer>

@@ -67,9 +67,9 @@ const Addproducts = () => {
 
 
   return (
-    <div className='row justify-content-center mt-4 bg-grey p-4'>
+    <div className='row justify-content-center mt-4 bg-black p-4'>
        <div className="col-md-6 p-4 card shadow">
-        <h3 className='text-primary'>Add Mlenga</h3>
+        <h3 className='text-primary'>Add Product</h3>
 
         {/* bind the loading hook */}
         {loading && <Loader />}
@@ -80,7 +80,7 @@ const Addproducts = () => {
 
         <form onSubmit={handleSubmit}>
           <input type="text"
-          placeholder='Enter the Product name'
+          placeholder='Product Name'
           className='form-control'
           required
           value={product_name}
@@ -89,7 +89,7 @@ const Addproducts = () => {
           {/* {product_name} */}
 
           <input type="text"
-          placeholder='Enter the Product Description'
+          placeholder='Product Description'
           className='form-control'
           required
           value={product_description}
@@ -98,7 +98,7 @@ const Addproducts = () => {
           {/* {product_description} */}
 
           <input type="number"
-          placeholder='Enter The price of the product'
+          placeholder='price in Kes'
           className='form-control'
           required
           value={product_cost}

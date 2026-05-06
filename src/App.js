@@ -8,6 +8,7 @@ import Getproducts from './components/Getproducts';
 import Makepayment from './components/Makepayment';
 import Notfound from './components/Notfound';
 import Footer from './components/Footer';
+import Aboutus from './components/Aboutus';
 
 
 function App() {
@@ -15,16 +16,16 @@ function App() {
 
    <Router>
 
-    <nav className='text-primary bg-dark'>
- <Link to="/" className='btn btn-sm m-3 bg-grey'>Home</Link>
- <Link to="/signin" className='btn btn-sm m-3 bg-grey'>Signin</Link>
- <Link to="/signup" className='btn btn-sm m-3 bg-grey'>Signup</Link>
- <Link to="/addproducts" className='btn btn-sm m-3 bg-grey'>Add products</Link>
- 
+    <nav className=' bg-dark p-5 shadow d-flex justify-content'>
+ <Link to="/" className='btn btn-sm m-3 text-primary'>Home</Link>
+ <Link to="/signin" className='btn btn-sm m-3 text-primary'>Signin</Link>
+ <Link to="/signup" className='btn btn-sm m-3 text-primary'>Signup</Link>
+ <Link to="/addproducts" className='btn btn-sm m-3 text-primary'>Add products</Link>
+ <Link to="/aboutus" className='btn btn-sm m-3 text-primary'>About us</Link>
 </nav>
-    <div className="App">
+    <div className="App  mb-10 text-center text-primary"> 
       <header className="App-header">
-      <h1 text-danger>Welcome to Mlenga Carhire</h1>
+      <h1>Welcome to Mlenga Carhire</h1>
 
       </header>
       
@@ -36,6 +37,7 @@ function App() {
         <Route path='/' element={<Getproducts />} />
         <Route path='/makepayment' element={< Makepayment />} />
         <Route path='*' element={< Notfound />} />
+        <Route path='/aboutus' element={< Aboutus />} />
       </Routes>
 
       <Footer/>

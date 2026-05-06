@@ -86,13 +86,13 @@ const Getproducts = () => {
              <section className='row bg-blue shadow p-4'>
               <div className='card col-md-6 shadow'>
                  <p> 1. <b>Select Car:</b>
-                  Browse from hundreds of cars and select the type of car you want for your trip!
+                  Browse our wide selection of cars and choose the one that suits your needs and preferences.
                 </p>
                   
               </div><br />
               <div className='card col-md-6 shadow'>
                  <p>2. <b>Verify Identity:</b>
-                  To ensure a smooth rental process, we require all customers to verify their identity. 
+                  To ensure a smooth rental process, we require all customers to verify their identity with a valid ID and driver's license. 
                   </p>
               </div><br />
             
@@ -122,13 +122,13 @@ const Getproducts = () => {
             </div><br />
 
             <div className='col-md-6'>
-               <img src="images/num.jpg" alt="" height="650px" width="500px" />
+               <img src="images/bnb.PNG" alt="" height="650px" width="100%" />
 
             </div>
 
           </section> <br /><br />
-        <div className='col-md-12 text-center text-primary font-weight-bold mb-4 p-3'>
-          <h2><b><i>Available Cars</i></b></h2>
+        <div className='col-md-12 text-center text-danger font-weight-bold mb-4 p-3'>
+          <h1><b><i>Available Cars</i></b></h1>
         </div>
 
 

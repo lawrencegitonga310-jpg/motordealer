@@ -65,9 +65,10 @@ const navigate = useNavigate()
 
 
   return (
-    <div className='row justify-content-center mt-4 bg-grey p-4'>
+    <div className='row justify-content-center mt-4 bg-black p-4'>
         <div className="card col-md-6 shadow p-4">
-            <h1 className='text-primary'>Sign in</h1>
+            <h1 className='text-black'><b>Welcome back</b></h1>
+            <h5>please enter your credentials</h5>
 
             <h5 className="text-info">{loading}</h5>
             <h3 className="text-success">{success}</h3>
@@ -76,7 +77,7 @@ const navigate = useNavigate()
 
             <form onSubmit={handleSubmit}>
                 <input type="email" 
-                placeholder='Enter the email Address'
+                placeholder='email Address'
                 className='form-control' 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -85,24 +86,39 @@ const navigate = useNavigate()
 
 
                 <input type="password" 
-                placeholder='Enter the password'
+                placeholder='password'
                 className='form-control' 
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required /> <br />
                     {/*Password */}
 
+
+                    <div className="login-options">
+            <label>
+              <input type="checkbox" /> Remember for 30 days
+            </label> <br /><br />
+            <a href="#">Forgot password?</a>
+          </div> <br /><br />
+
         
 
                 <input type="submit" 
-                 value="Signin"
+                 value="Sign in"
                  className='btn btn-primary'/>
                 <br /><br />
 
-                Don't have an account? <Link to={"/signup"}>Register</Link>
+                
+          
+                
+
+               
 
                 
             </form>
+             <p className="signup-text">
+           Don’t have an account? <a href="#">Sign up</a>
+          </p>
             
         </div>
     </div>
