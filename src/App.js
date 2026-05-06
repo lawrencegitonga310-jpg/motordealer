@@ -13,28 +13,43 @@ import Aboutus from './components/Aboutus';
 
 function App() {
   return (
-
    <Router>
-
-    <nav className=' bg-dark p-5 shadow d-flex justify-content'>
- <Link to="/" className='btn btn-sm m-3 text-primary'>Home</Link>
- <Link to="/signin" className='btn btn-sm m-3 text-primary'>Signin</Link>
- <Link to="/signup" className='btn btn-sm m-3 text-primary'>Signup</Link>
- <Link to="/addproducts" className='btn btn-sm m-3 text-primary'>Add products</Link>
- <Link to="/aboutus" className='btn btn-sm m-3 text-primary'>About us</Link>
+    <nav className='bg-dark p-5 shadow d-flex justify-content-center'>
+ <Link to="/" className='nav-link-btn'>
+   <span className='nav-icon'>🏠</span>
+   <span className='nav-text'>Home</span>
+ </Link>
+ <Link to="/signin" className='nav-link-btn'>
+   <span className='nav-icon'>👤</span>
+   <span className='nav-text'>Signin</span>
+ </Link>
+ <Link to="/signup" className='nav-link-btn'>
+   <span className='nav-icon'>✨</span>
+   <span className='nav-text'>Signup</span>
+ </Link>
+ <Link to="/addproducts" className='nav-link-btn'>
+   <span className='nav-icon'>🚗</span>
+   <span className='nav-text'>Add products</span>
+ </Link>
+ <Link to="/aboutus" className='nav-link-btn'>
+   <span className='nav-icon'>ℹ️</span>
+   <span className='nav-text'>About us</span>
+ </Link>
 </nav>
     <div className="App  mb-10 text-center text-primary"> 
       <header className="App-header">
-      <h1>Welcome to Mlenga Carhire</h1>
-
-      </header>
+      <h1 className='welcome-heading'>
+        <span className='welcome-text'>Welcome to</span>
+        <span className='brand-name'>Mrenga Carhire</span>
+        <span className='car-icon'>🚗</span>
+      </h1>
+</header>
       
-
       <Routes>
         <Route path='/signup' element={< Signup />} />
         <Route path='/signin' element={< Signin />} />
         <Route path='/addproducts' element={< Addproducts />} />
-        <Route path='/' element={<Getproducts />} />
+        <Route path='/' element={< Getproducts />} />
         <Route path='/makepayment' element={< Makepayment />} />
         <Route path='*' element={< Notfound />} />
         <Route path='/aboutus' element={< Aboutus />} />

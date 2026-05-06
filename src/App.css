@@ -130,3 +130,257 @@
   color: black;
 }
 
+/* Attractive Navigation Links */
+.nav-link-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 15px 20px;
+  margin: 0 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  min-width: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.nav-link-btn:hover::before {
+  left: 100%;
+}
+
+.nav-link-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.nav-link-btn:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.nav-icon {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.nav-link-btn:hover .nav-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.nav-text {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.nav-link-btn:hover .nav-text {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .nav-link-btn {
+    padding: 12px 15px;
+    margin: 0 5px;
+    min-width: 80px;
+  }
+  
+  .nav-icon {
+    font-size: 1.2rem;
+  }
+  
+  .nav-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-link-btn {
+    padding: 10px 12px;
+    margin: 0 3px;
+    min-width: 70px;
+  }
+  
+  .nav-icon {
+    font-size: 1rem;
+  }
+  
+  .nav-text {
+    font-size: 0.7rem;
+  }
+}
+
+/* Attractive Welcome Heading */
+.welcome-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  animation: fadeInScale 1s ease-out;
+}
+
+.welcome-text {
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.brand-name {
+  display: block;
+  background: linear-gradient(45deg, #667eea, #764ba2, #f093fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: slideInRight 0.8s ease-out;
+  position: relative;
+}
+
+.brand-name::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+  animation: expandWidth 1s ease-out;
+}
+
+.car-icon {
+  display: block;
+  font-size: 4rem;
+  animation: bounce 2s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Animations */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes expandWidth {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100px;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Heading */
+@media (max-width: 768px) {
+  .welcome-heading {
+    font-size: 2.8rem;
+    margin: 30px 0;
+  }
+  
+  .welcome-text {
+    font-size: 1.5rem;
+  }
+  
+  .brand-name {
+    font-size: 2.8rem;
+  }
+  
+  .car-icon {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-heading {
+    font-size: 2.2rem;
+    margin: 20px 0;
+  }
+  
+  .welcome-text {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+  
+  .brand-name {
+    font-size: 2.2rem;
+  }
+  
+  .car-icon {
+    font-size: 2.5rem;
+  }
+}
+

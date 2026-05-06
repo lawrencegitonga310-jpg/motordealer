@@ -1,50 +1,372 @@
-/* From Uiverse.io by Nawsome */
-.loader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
+/* Modern Loader Component Styles */
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  z-index: -1;
+}
+
+.loader-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Animated Rings */
+.rings-container {
+  display: flex;
+  gap: 15px;
+  position: relative;
+}
+
+.ring {
+  width: 80px;
+  height: 80px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  position: relative;
+  animation: fadeInScale 0.6s ease-out;
+  animation-delay: calc(var(--i) * 0.2s);
+}
+
+.ring::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.ring-1 {
+  --i: 0;
+  border-top-color: #667eea;
+  animation-delay: 0s;
+}
+
+.ring-2 {
+  --i: 1;
+  border-top-color: #764ba2;
+  animation-delay: 0.2s;
+}
+
+.ring-3 {
+  --i: 2;
+  border-top-color: #f093fb;
+  animation-delay: 0.4s;
+}
+
+.ring-inner {
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.ring-inner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
   }
- 
-  .slider {
-    overflow: hidden;
-    background-color: white;
-    margin: 0 15px;
-    height: 80px;
-    width: 20px;
-    border-radius: 30px;
-    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1), -15px -15px 30px #fff,
-      inset -5px -5px 10px rgba(0, 0, 255, 0.1),
-      inset 5px 5px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
- 
-  .slider::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    border-radius: 100%;
-    box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.3), 0px 420px 0 400px #2697f3,
-      inset 0px 0px 0px rgba(0, 0, 0, 0.1);
-    animation: animate_2 2.5s ease-in-out infinite;
-    animation-delay: calc(-0.5s * var(--i));
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
   }
- 
-  @keyframes animate_2 {
-    0% {
-      transform: translateY(250px);
-      filter: hue-rotate(0deg);
-    }
- 
-    50% {
-      transform: translateY(0);
-    }
- 
-    100% {
-      transform: translateY(250px);
-      filter: hue-rotate(180deg);
-    }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
+}
+
+/* Loading Text */
+.loading-text-container {
+  text-align: center;
+  position: relative;
+}
+
+.loading-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+}
+
+.loading-message {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding: 8px 20px;
+  border-radius: 20px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Progress Bar */
+.progress-container {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+  border-radius: 3px;
+  width: 75%;
+  animation: progressAnimation 2s ease-out;
+}
+
+@keyframes progressAnimation {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 75%;
+  }
+}
+
+.progress-percentage {
+  font-size: 0.85rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Sparkles */
+.sparkles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: linear-gradient(45deg, #ffffff, #f0f9ff);
+  border-radius: 50%;
+  animation: sparkleAnimation 2s ease-in-out;
+}
+
+@keyframes sparkleAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(360deg);
+  }
+}
+
+.sparkle-1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.sparkle-2 {
+  top: 30%;
+  left: 70%;
+  animation-delay: 0.3s;
+}
+
+.sparkle-3 {
+  top: 60%;
+  left: 30%;
+  animation-delay: 0.6s;
+}
+
+.sparkle-4 {
+  top: 70%;
+  left: 80%;
+  animation-delay: 0.9s;
+}
+
+.sparkle-5 {
+  top: 80%;
+  left: 20%;
+  animation-delay: 1.2s;
+}
+
+.sparkle-6 {
+  top: 20%;
+  left: 60%;
+  animation-delay: 1.5s;
+}
+
+.sparkle-7 {
+  top: 30%;
+  left: 40%;
+  animation-delay: 1.8s;
+}
+
+.sparkle-8 {
+  top: 25%;
+  left: 85%;
+  animation-delay: 2.1s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rings-container {
+    gap: 10px;
+  }
+  
+  .ring {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .loading-message {
+    font-size: 1rem;
+    padding: 6px 16px;
+  }
+  
+  .progress-container {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loader-content {
+    padding: 30px;
+    gap: 30px;
+  }
+  
+  .rings-container {
+    gap: 8px;
+  }
+  
+  .ring {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .loading-dots {
+    gap: 6px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .loading-message {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+  
+  .progress-container {
+    max-width: 200px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .loader-content {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .loading-message {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+  }
+  
+  .progress-bar {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}

@@ -11,4 +11,3 @@ const RingLoader = () => {
 };
 
 export default RingLoader;
-

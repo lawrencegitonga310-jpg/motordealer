@@ -1,116 +1,256 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import '../css/Signup.css';
 
 const Signup = () => {
-    //Initialize the hooks
-const [username, setUsername] = useState("");
-const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");
-const [phone, setPhone] = useState("");
+    //Initialize hooks
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [phone, setPhone] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
+    const [passwordStrength, setPasswordStrength] = useState("");
 
-//Define the three states an application will move to during the signup process
-const [loading, setLoading] = useState("");
-const [success, setSuccess] = useState("");
-const [error, setError] = useState("");
+    //Define states for form handling
+    const [loading, setLoading] = useState("");
+    const [success, setSuccess] = useState("");
+    const [error, setError] = useState("");
 
-//Below is the function that will handle the submission of the signup form
- const handleSubmit = async (e) => {
-    //Below we preventt the default behavior of the form which is to refresh the page when submitted
-    e.preventDefault(); 
-    //Update our loading hook that will be displayed to the users when they click the signup button
-    setLoading("Please wait as registration is in progress...");
-    try {
-        //Create a form-data object that will enable you to capture the form details entered on the form
-        const formdata = new FormData();
-        //Insert the four details in terms of key-value pairs
-        formdata.append("username", username);
-        formdata.append("email", email);
-        formdata.append("password", password);
-        formdata.append("phone", phone);
+    // Password strength checker
+    const checkPasswordStrength = (password) => {
+        if (!password) return "";
+        if (password.length < 6) return "Weak";
+        if (password.length < 10 || !/[A-Z]/.test(password) || !/[0-9]/.test(password)) return "Medium";
+        return "Strong";
+    };
 
-        //By use of axios, we can access the method post
-        const response =await axios.post("https://gitongalawrence.alwaysdata.net/api/signup", formdata)
-        //set back the loading to default
+    // Handle password change
+    const handlePasswordChange = (e) => {
+        const newPassword = e.target.value;
+        setPassword(newPassword);
+        setPasswordStrength(checkPasswordStrength(newPassword));
+    };
 
-        setLoading("");
-        //Just incase everything goes on well update the success hook with a message
-        setSuccess(response.data.message)
+    //Below is function that will handle the submission of signup form
+    const handleSubmit = async (e) => {
+        //Below we prevent the default behavior of the form which is to refresh the page when submitted
+        e.preventDefault(); 
+        //Update our loading hook that will be displayed to users when they click the signup button
+        setLoading("Creating your account...");
+        try {
+            //Create a form-data object that will enable you to capture form details entered on the form
+            const formdata = new FormData();
+            //Insert the four details in terms of key-value pairs
+            formdata.append("username", username);
+            formdata.append("email", email);
+            formdata.append("password", password);
+            formdata.append("phone", phone);
 
-        //Clear your hooks 
-        setUsername("");
-        setEmail("");
-        setPassword("");
-        setPhone("");   
+            //By use of axios, we can access the method post
+            const response = await axios.post("https://gitongalawrence.alwaysdata.net/api/signup", formdata)
+            
+            //set back loading to default
+            setLoading("");
+            
+            //Just in case everything goes well update the success hook with a message
+            setSuccess(response.data.message)
 
-    }
-    catch (error) {
-        //set back the loading hook to default
-        setLoading("");
-        //Update the error hook with the error message from the response
-        setError(error.message);
-
-    }
- };
-
-
-  return (
-    <div className='row justify-content-center mt-4 bg-black p-4'>
-        <div className="card col-md-6 shadow p-4 bg-grey">
-            <h1 className='text-black'><b>Create an account</b></h1>
-            <h5 className="text-warning">{loading}</h5>
-            <h3 className="text-success">{success}</h3>
-            <h4 className="text-danger">{error}</h4>
-            <form onSubmit={handleSubmit}>
-                <input type="text" 
-                placeholder='Username'
-                className='form-control'    
-                value={username} 
-                onChange={(e) => setUsername(e.target.value)}
-                required /> <br />
-
-                {/*Username */}
-
-                <input type="email" 
-                placeholder='Email Address'
-                className='form-control' 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required /> <br />
-                    {/*Email Address */}
+            //Clear your hooks 
+            setUsername("");
+            setEmail("");
+            setPassword("");
+            setPhone("");   
+            setPasswordStrength("");
+        }
+        catch (error) {
+            //set back loading hook to default
+            setLoading("");
+            //Update the error hook with the error message from the response
+            setError(error.message || "Something went wrong. Please try again.");
+        }
+    };
 
 
-                <input type="password" 
-                placeholder='password'
-                className='form-control' 
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required /> <br />
-                    {/*Password */}
+    return (
+        <div className='signup-container'>
+            <div className='signup-background'>
+                <div className='signup-overlay'></div>
+            </div>
+            
+            <div className='signup-content'>
+                <div className='signup-card'>
+                    {/* Header Section */}
+                    <div className='signup-header'>
+                        <div className='logo-section'>
+                            <div className='logo'>
+                                <span className='logo-icon'>🚗</span>
+                            </div>
+                            <h1 className='signup-title'>Create Account</h1>
+                            <p className='signup-subtitle'>Join us and start your journey</p>
+                        </div>
+                    </div>
 
-                <input type="tel" 
-                placeholder='Phone Number'
-                className='form-control' 
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required /> <br />
-                    {/*Mobile Phone number */}
+                    {/* Alert Messages */}
+                    {loading && (
+                        <div className='alert alert-info'>
+                            <div className='alert-content'>
+                                <span className='alert-icon'>⏳</span>
+                                <span>{loading}</span>
+                            </div>
+                        </div>
+                    )}
+                    
+                    {success && (
+                        <div className='alert alert-success'>
+                            <div className='alert-content'>
+                                <span className='alert-icon'>✅</span>
+                                <span>{success}</span>
+                            </div>
+                        </div>
+                    )}
+                    
+                    {error && (
+                        <div className='alert alert-danger'>
+                            <div className='alert-content'>
+                                <span className='alert-icon'>❌</span>
+                                <span>{error}</span>
+                            </div>
+                        </div>
+                    )}
 
-                           <div className="login-options">
-            <label>
-              <input type="checkbox" /> Remember for 30 days
-            </label> <br /><br />
-            <a href="#">Forgot password?</a>
-          </div> <br /><br />
+                    {/* Signup Form */}
+                    <form onSubmit={handleSubmit} className='signup-form'>
+                        <div className='form-row'>
+                            <div className='form-group'>
+                                <label htmlFor='username' className='form-label'>
+                                    <span className='label-icon'>👤</span>
+                                    Username
+                                </label>
+                                <div className='input-wrapper'>
+                                    <input 
+                                        type="text" 
+                                        id="username"
+                                        placeholder='Choose a username'
+                                        className='form-input' 
+                                        value={username}
+                                        onChange={(e) => setUsername(e.target.value)}
+                                        required 
+                                    />
+                                    <span className='input-focus-border'></span>
+                                </div>
+                            </div>
 
-                <input type="submit"  value="Signup" className='btn btn-primary'/>
-                <br /><br />
+                            <div className='form-group'>
+                                <label htmlFor='email' className='form-label'>
+                                    <span className='label-icon'>📧</span>
+                                    Email Address
+                                </label>
+                                <div className='input-wrapper'>
+                                    <input 
+                                        type="email" 
+                                        id="email"
+                                        placeholder='Enter your email address'
+                                        className='form-input' 
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        required 
+                                    />
+                                    <span className='input-focus-border'></span>
+                                </div>
+                            </div>
+                        </div>
 
-                Already have an account? <Link to={"/signin"}>Signin</Link>
-            </form>
+                        <div className='form-row'>
+                            <div className='form-group'>
+                                <label htmlFor='password' className='form-label'>
+                                    <span className='label-icon'>🔒</span>
+                                    Password
+                                </label>
+                                <div className='input-wrapper'>
+                                    <input 
+                                        type={showPassword ? "text" : "password"} 
+                                        id="password"
+                                        placeholder='Create a strong password'
+                                        className='form-input' 
+                                        value={password}
+                                        onChange={handlePasswordChange}
+                                        required 
+                                    />
+                                    <button 
+                                        type="button" 
+                                        className='password-toggle'
+                                        onClick={() => setShowPassword(!showPassword)}
+                                    >
+                                        {showPassword ? '👁️‍🗨️' : '👁️'}
+                                    </button>
+                                    <span className='input-focus-border'></span>
+                                </div>
+                                {passwordStrength && (
+                                    <div className={`password-strength ${passwordStrength.toLowerCase()}`}>
+                                        <div className='strength-bar'>
+                                            <div className={`strength-fill ${passwordStrength.toLowerCase()}`}></div>
+                                        </div>
+                                        <span className='strength-text'>Password Strength: {passwordStrength}</span>
+                                    </div>
+                                )}
+                            </div>
+
+                            <div className='form-group'>
+                                <label htmlFor='phone' className='form-label'>
+                                    <span className='label-icon'>📱</span>
+                                    Phone Number
+                                </label>
+                                <div className='input-wrapper'>
+                                    <input 
+                                        type="tel" 
+                                        id="phone"
+                                        placeholder='Enter your phone number'
+                                        className='form-input' 
+                                        value={phone}
+                                        onChange={(e) => setPhone(e.target.value)}
+                                        required 
+                                    />
+                                    <span className='input-focus-border'></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Terms and Submit */}
+                        <div className='form-options'>
+                            <label className='checkbox-label'>
+                                <input type="checkbox" className='checkbox-input' required />
+                                <span className='checkbox-custom'></span>
+                                <span className='checkbox-text'>I agree to the Terms of Service and Privacy Policy</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" className='signup-btn' disabled={loading}>
+                            {loading ? (
+                                <span className='btn-content'>
+                                    <span className='spinner'></span>
+                                    Creating Account...
+                                </span>
+                            ) : (
+                                <span className='btn-content'>
+                                    <span className='btn-icon'>✨</span>
+                                    Create Account
+                                </span>
+                            )}
+                        </button>
+                    </form>
+
+                    {/* Login Link */}
+                    <div className='signin-section'>
+                        <p className='signin-text'>
+                            Already have an account? 
+                            <Link to="/signin" className='signin-link'>Sign In</Link>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default Signup;
