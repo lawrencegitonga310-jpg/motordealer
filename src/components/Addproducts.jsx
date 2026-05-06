@@ -67,7 +67,7 @@ const Addproducts = () => {
 
 
   return (
-    <div className='row justify-content-center mt-4 bg-black p-4'>
+    <div className='row justify-content-center mt-4 bg-grey p-4'>
        <div className="col-md-6 p-4 card shadow">
         <h3 className='text-primary'>Add Mlenga</h3>
 

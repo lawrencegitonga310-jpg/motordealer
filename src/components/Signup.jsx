@@ -55,7 +55,7 @@ const [error, setError] = useState("");
 
 
   return (
-    <div className='row justify-content-center mt-4 bg-black p-4'>
+    <div className='row justify-content-center mt-4 bg-grey p-4'>
         <div className="card col-md-6 shadow p-4">
             <h1 className='text-primary'>Sign Up</h1>
             <h5 className="text-warning">{loading}</h5>

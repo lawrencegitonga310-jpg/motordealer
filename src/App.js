@@ -15,16 +15,16 @@ function App() {
 
    <Router>
 
-    <nav className='text-center bg-dark'>
- <Link to="/" className='btn btn-sm m-3 bg-white'>Home</Link>
- <Link to="/signin" className='btn btn-sm m-3 bg-white'>Signin</Link>
- <Link to="/signup" className='btn btn-sm m-3 bg-white'>Signup</Link>
- <Link to="/addproducts" className='btn btn-sm m-3 bg-white'>Add products</Link>
+    <nav className='text-primary bg-dark'>
+ <Link to="/" className='btn btn-sm m-3 bg-grey'>Home</Link>
+ <Link to="/signin" className='btn btn-sm m-3 bg-grey'>Signin</Link>
+ <Link to="/signup" className='btn btn-sm m-3 bg-grey'>Signup</Link>
+ <Link to="/addproducts" className='btn btn-sm m-3 bg-grey'>Add products</Link>
  
 </nav>
     <div className="App">
       <header className="App-header">
-      <h1>Welcome to motor dealer</h1>
+      <h1 text-danger>Welcome to Mlenga Carhire</h1>
 
       </header>
       

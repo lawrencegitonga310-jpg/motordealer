@@ -61,7 +61,7 @@ const Makepayment = () => {
   }
 
   return (
-    <div className='row justify-content-center bg-black p-4'>
+    <div className='row justify-content-center bg-grey p-4'>
 
        {/*/<button className='btn btn-outline-primary'>back to products</button> */}
         <h1>Mlenga Carhire</h1>
