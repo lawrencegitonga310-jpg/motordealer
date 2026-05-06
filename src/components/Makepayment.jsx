@@ -61,10 +61,10 @@ const Makepayment = () => {
   }
 
   return (
-    <div className='row justify-content-center'>
+    <div className='row justify-content-center bg-black p-4'>
 
        {/*/<button className='btn btn-outline-primary'>back to products</button> */}
-        <h1>Make Payment - Lipa na M-pesa</h1>
+        <h1>Mlenga Carhire</h1>
 
         <div className='col-md-1'>
             <input type="button"

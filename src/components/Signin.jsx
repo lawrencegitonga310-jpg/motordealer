@@ -65,7 +65,7 @@ const navigate = useNavigate()
 
 
   return (
-    <div className='row justify-content-center mt-4'>
+    <div className='row justify-content-center mt-4 bg-black p-4'>
         <div className="card col-md-6 shadow p-4">
             <h1 className='text-primary'>Sign in</h1>
 

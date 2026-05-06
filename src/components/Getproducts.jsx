@@ -73,9 +73,9 @@ const Getproducts = () => {
           <section className='row'>
             <div className='col-md-6 bg-light shadow p-4'>
              <h4><b><u>Why Choose Us</u></b></h4>
-             <h3><b>Benefits of renting with us</b></h3>
-             <ul>
-              <li><b>Convenience:</b> Meet & greet at the airport, your hotel, the office, etc
+    
+              <ul> 
+              <li><b>Convenience:</b> Book your car rental online in just a few clicks, anytime and anywhere
               .</li>
               <li><b>Flexibility:</b> Cancel or modify your booking up to 24 hours before the start time.</li>
               <li><b>Peace of Mind:</b> Take a self-drive vehicle, or add a driver for peace of mind</li>
