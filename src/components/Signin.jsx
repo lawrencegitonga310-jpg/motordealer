@@ -67,7 +67,8 @@ const Signin = () => {
         <div className='signin-card'>
           {/* Header Section */}
           <div className='signin-header'>
-            <div className='logo-section'>
+            
+            
               <div className='logo'>
                 <span className='logo-icon'>🚗</span>
               </div>

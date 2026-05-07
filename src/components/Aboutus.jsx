@@ -15,7 +15,7 @@ const Aboutus = () => {
                         <div className='hero-content'>
                             <div className='hero-logo'>
                                 <span className='logo-icon'>🚗</span>
-                                <h1 className='hero-title'>Mlenga Carhire</h1>
+                                <h1 className='hero-title'>Mrenga Carhire</h1>
                             </div>
                             <p className='hero-subtitle'>Your trusted partner for quality car rentals</p>
                         </div>
@@ -26,7 +26,7 @@ const Aboutus = () => {
                         <h2 className='section-title'>Our Story</h2>
                         <div className='story-content'>
                             <p className='story-text'>
-                                Founded with a passion for excellence, Mlenga Carhire began its journey with a simple mission: to provide exceptional car rental services that make travel accessible and enjoyable for everyone. What started as a small vision has grown into a trusted name in the car rental industry.
+                                Founded with a passion for excellence, Mrenga Carhire began its journey with a simple mission: to provide exceptional car rental services that make travel accessible and enjoyable for everyone. What started as a small vision has grown into a trusted name in the car rental industry.
                             </p>
                             <p className='story-text'>
                                 Our commitment to quality service and customer satisfaction has been the cornerstone of our growth. We believe that every journey should begin with a reliable vehicle and end with lasting memories.
@@ -69,7 +69,7 @@ const Aboutus = () => {
 
                     {/* Why Choose Us */}
                     <section className='features-section'>
-                        <h2 className='section-title'>Why Choose Mlenga Carhire?</h2>
+                        <h2 className='section-title'>Why Choose Mrenga Carhire?</h2>
                         <div className='features-grid'>
                             <div className='feature-card'>
                                 <div className='feature-icon'>🚗</div>
@@ -121,7 +121,7 @@ const Aboutus = () => {
                     <section className='cta-section'>
                         <div className='cta-content'>
                             <h2 className='cta-title'>Ready to Start Your Journey?</h2>
-                            <p className='cta-subtitle'>Join thousands of satisfied customers who trust Mlenga Carhire for their travel needs.</p>
+                            <p className='cta-subtitle'>Join thousands of satisfied customers who trust Mrenga Carhire for their travel needs.</p>
                             <div className='cta-buttons'>
                                 <button className='cta-btn primary'>
                                     <span className='btn-icon'>🚗</span>

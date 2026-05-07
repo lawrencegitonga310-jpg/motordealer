@@ -15,7 +15,7 @@ const Footer = () => {
               <div className="footer-brand">
                 <h3 className="brand-title">
                   <span className="brand-icon">🚗</span>
-                  Mlenga Carhire
+                  Mrenga Carhire
                 </h3>
                 <p className="brand-description">
                   Your trusted partner for quality car rentals. We offer a wide range of vehicles to suit your needs, from compact cars to spacious SUVs, with competitive pricing and excellent customer service.
@@ -27,7 +27,7 @@ const Footer = () => {
                   </div>
                   <div className="contact-item">
                     <span className="contact-icon">✉️</span>
-                    <span>info@mlengacarhire.com</span>
+                    <span>info@mrengacarhire.com</span>
                   </div>
                   <div className="contact-item">
                     <span className="contact-icon">📍</span>
@@ -126,7 +126,7 @@ const Footer = () => {
           <div className="row align-items-center">
             <div className="col-md-6">
               <p className="copyright">
-                © {new Date().getFullYear()} Mlenga Carhire. All rights reserved.
+                © {new Date().getFullYear()} Mrenga Carhire. All rights reserved.
               </p>
             </div>
             <div className="col-md-6">

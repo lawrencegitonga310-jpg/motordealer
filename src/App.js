@@ -9,6 +9,7 @@ import Makepayment from './components/Makepayment';
 import Notfound from './components/Notfound';
 import Footer from './components/Footer';
 import Aboutus from './components/Aboutus';
+import Location from './components/Location';
 
 
 function App() {
@@ -34,6 +35,11 @@ function App() {
  <Link to="/aboutus" className='nav-link-btn'>
    <span className='nav-icon'>ℹ️</span>
    <span className='nav-text'>About us</span>
+   
+ </Link>
+ <Link to="/location" className='nav-link-btn'>
+   <span className='nav-icon'>📍</span>
+   <span className='nav-text'>Location</span>
  </Link>
 </nav>
     <div className="App  mb-10 text-center text-primary"> 
@@ -53,6 +59,7 @@ function App() {
         <Route path='/makepayment' element={< Makepayment />} />
         <Route path='*' element={< Notfound />} />
         <Route path='/aboutus' element={< Aboutus />} />
+        <Route path='/location' element={< Location />} />
       </Routes>
 
       <Footer/>
