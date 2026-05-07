@@ -23,7 +23,7 @@ const Footer = () => {
                 <div className="contact-info">
                   <div className="contact-item">
                     <span className="contact-icon">📞</span>
-                    <span>+254 123 456 789</span>
+                    <span>+254718483892</span>
                   </div>
                   <div className="contact-item">
                     <span className="contact-icon">✉️</span>

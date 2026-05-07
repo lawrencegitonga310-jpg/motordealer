@@ -1,0 +1,43 @@
+{
+  "name": "mrenga-carhire-neon",
+  "version": "1.0.0",
+  "description": "Mrenga Carhire - Premium car rental service for Neon Smarta",
+  "main": "index.js",
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "build: "react-native bundle-assets-android"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-native": "0.72.6",
+    "@reduxjs/toolkit": "^1.9.7",
+    "react-redux": "^8.1.3",
+    "react-navigation": "^6.1.9",
+    "@react-native-async-storage/async-storage": "^1.19.5",
+    "axios": "^1.6.2",
+    "react-native-vector-icons": "^10.0.0",
+    "react-native-elements": "^3.4.2",
+    "react-native-maps": "^1.7.1",
+    "react-native-geolocation-service": "^5.3.1",
+    "@react-native-community/netinfo": "^9.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@babel/preset-react": "^7.20.0",
+    "@babel/runtime": "^7.20.0",
+    "metro-react-native-babel-preset": "^0.76.8"
+  },
+  "keywords": [
+    "react-native",
+    "car-rental",
+    "mrenga",
+    "kenya",
+    "neon-smarta"
+  ],
+  "author": "Mrenga Carhire Team",
+  "license": "MIT"
+}

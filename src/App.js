@@ -10,6 +10,7 @@ import Notfound from './components/Notfound';
 import Footer from './components/Footer';
 import Aboutus from './components/Aboutus';
 import Location from './components/Location';
+import Chatbot from './components/Chatbot';
 
 
 function App() {
@@ -41,6 +42,10 @@ function App() {
    <span className='nav-icon'>📍</span>
    <span className='nav-text'>Location</span>
  </Link>
+ <Link to="/chatbot" className='nav-link-btn'>
+   <span className='nav-icon'>💬</span>
+   <span className='nav-text'>Chatbot</span>
+ </Link>
 </nav>
     <div className="App  mb-10 text-center text-primary"> 
       <header className="App-header">
@@ -60,11 +65,13 @@ function App() {
         <Route path='*' element={< Notfound />} />
         <Route path='/aboutus' element={< Aboutus />} />
         <Route path='/location' element={< Location />} />
+        <Route path='/chatbot' element={< Chatbot />} />
       </Routes>
 
       <Footer/>
     </div>
    </Router>
+
   );
 }
 
